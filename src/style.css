@@ -1,0 +1,25 @@
+body{
+    width: 80%;
+    margin: 5%;
+    padding: 5%;
+}
+.main-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.scores-part,.submit-part{
+    width: 40%;
+    background: green;
+}
+.score-title{
+  display: flex;
+    flex-direction: row;
+    justify-content: space-between;  
+}
+.submit-form{
+   display: flex;
+   flex-direction: column;
+   gap: 10px; 
+}
+
