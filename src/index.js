@@ -19,14 +19,16 @@ class UI{
   results.forEach((result) => UI.addResult(result));
   }
   static addResult(result){
+
     const list = document.querySelector('.scores');
-    list.innerHTML= `
-    <div class="result">
+    const listRow = document.createElement('div');
+    listRow.innerHTML= `
       <p>${result.user}</p>
       <p>${result.score}</p>
-    </div>
-    `
-    
+    `;
+    list.appendChild(listRow);
   }
 
 }
+document.addEventListener('DOMContentLoaded',UI.allResults);
+UI.addResult(o);

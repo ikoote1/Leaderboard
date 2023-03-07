@@ -1,6 +1,6 @@
 export class scores {
     constructor(name,score){
-        this.name = name;
+        this.user = user;
         this.score = score;
     }
 }
