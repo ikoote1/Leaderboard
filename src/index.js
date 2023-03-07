@@ -20,6 +20,12 @@ class UI{
   }
   static addResult(result){
     const list = document.querySelector('.scores');
+    list.innerHTML= `
+    <div class="result">
+      <p>${result.user}</p>
+      <p>${result.score}</p>
+    </div>
+    `
     
   }
 
