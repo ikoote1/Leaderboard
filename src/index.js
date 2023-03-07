@@ -4,6 +4,30 @@ class UI{
   static allResults(){
     const results =[
       {
+        "user": "Ikoote rasuli",
+        "score": 42
+    },
+    {
+        "user": "Peter Parker",
+        "score": 35
+    },
+    {
+        "user": "Wonder Woman",
+        "score": 50
+    },
+    {
+      "user": "Ikoote rasuli",
+      "score": 42
+  },
+  {
+      "user": "Peter Parker",
+      "score": 35
+  },
+  {
+      "user": "Wonder Woman",
+      "score": 50
+  },
+      {
           "user": "Ikoote rasuli",
           "score": 42
       },

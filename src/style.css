@@ -39,3 +39,20 @@ height: 30px;
     left: 80%;
 }
 
+.scores{
+    width: 100%;
+    border: solid;
+    height: 300px;
+    overflow: auto;
+}
+.scores::-webkit-scrollbar{
+    width: 0;
+}
+.scores>div{
+    border: 1px solid ;
+    position: relative;
+    padding-left: 5px;
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+}
