@@ -2,8 +2,8 @@ import './style.css';
 // import  scores  from './modules/constructor.js';
 
 class UI {
-  static allResults() {
-    const results = [
+   constructor() {
+     this.results = [
       {
         user: 'Ikoote rasuli',
         score: 42,
@@ -41,10 +41,12 @@ class UI {
         score: 50,
       },
     ];
-    results.forEach((result) => UI.addResult(result));
+  }
+  renderList(){
+    this.results.forEach((result) => this.addResult(result));
   }
 
-  static addResult(result) {
+   addResult(result) {
     const list = document.querySelector('.scores');
     const listRow = document.createElement('div');
     listRow.innerHTML = `
@@ -54,5 +56,24 @@ class UI {
     list.appendChild(listRow);
   }
 }
-document.addEventListener('DOMContentLoaded', UI.allResults);
-UI.addResult();
+const ui = new UI();
+//document.addEventListener('DOMContentLoaded', ui.allResults);
+ui.renderList();
+
+// fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/2gzeEkv7rMvQMPeB1pjG/scores/', {
+//   method: 'POST',
+//   body: JSON.stringify({
+//     user: 'ikoote-game',
+//     score:70,
+   
+//   }),
+//   headers: {
+//     'Content-type': 'application/json; charset=UTF-8',
+//   },
+// })
+//   .then((response) => response.json())
+//   .then((json) => console.log(json));
+
+//   {
+//     "result": "Game with ID: 2gzeEkv7rMvQMPeB1pjG added."
+// }
