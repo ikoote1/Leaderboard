@@ -1,8 +1,12 @@
-const getLists = async () => {
-    const response = await fetch("https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/2gzeEkv7rMvQMPeB1pjG/scores/");
-    const data = await response.json();
+import addResult from "./card.js";
+async function loadData() {
 
-    return data;
-};
-
-export {getLists}
+    const requestURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/2gzeEkv7rMvQMPeB1pjG/scores/';
+    const request = new Request(requestURL);
+  
+    const response = await fetch(request);
+    const {result} = await response.json();
+    
+    result.forEach((res) => addResult(res));
+  }
+  export {loadData}
