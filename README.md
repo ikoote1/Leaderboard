@@ -81,7 +81,7 @@
 
 ## 🚀 Live Demo <a name="Preim Live"></a>
 
-- Live Demo Link(href="#")
+- Live Demo comming soon
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -127,7 +127,7 @@ To run tests, run the following steps:
 
 ### Deployment
 
--  This project was deployed using github pages and this the <a href="https://ikoote1.github.io/Leaderboard/">link</a> to the live devmo.
+-  This project was deployed using github pages and this the <a href="#">link</a> to the live demo.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -142,7 +142,7 @@ To run tests, run the following steps:
 
 - GitHub: [@githubhandle](https://github.com/ikoote1)
 - Twitter: [@twitterhandle](https://twitter.com/ikoote1)
-- LinkedIn:[@LinkedIn](https://www.linkedin.com/public-profile/settings?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3B4xL98PtKS7SDj%2Fe93TEh9w%3D%3D)
+- LinkedIn:[@LinkedIn](https://www.linkedin.com/in/ikoote-rasuli-479545246/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -151,7 +151,6 @@ To run tests, run the following steps:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
 
 -[ ] **Add login for users**
 -[ ] **Space to display top 5 players**
