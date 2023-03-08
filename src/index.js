@@ -1,13 +1,19 @@
 import './style.css';
 import { loadData } from './modules/fetch';
-// import addData from './modules/data';
+//import addResult from './modules/card';
 
 const refresh = document.querySelector('.refresh');
-const submit = document.querySelector('.submit');
+const form = document.querySelector('.submit-form');
+const list = document.querySelector('.scores');
+
+//fetching data
 refresh.addEventListener('click',()=>{
+  list.innerHTML = "";
   loadData();
 });
-const form = document.querySelector('.submit-form');
+
+
+//Adding data
 form.addEventListener('submit',addData);
 
 function addData(event){
@@ -28,20 +34,3 @@ headers: {
 .then((json) => console.log(json));
 
 }
-// fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/2gzeEkv7rMvQMPeB1pjG/scores/', {
-//   method: 'POST',
-//   body: JSON.stringify({
-//     user: 'ikoote-game',
-//     score:70,
-   
-//   }),
-//   headers: {
-//     'Content-type': 'application/json; charset=UTF-8',
-//   }, 
-// })
-//   .then((response) => response.json())
-//   .then((json) => console.log(json));
-
-//   {
-//     "result": "Game with ID: 2gzeEkv7rMvQMPeB1pjG added."
-// }
