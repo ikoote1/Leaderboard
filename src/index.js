@@ -1,65 +1,32 @@
 import './style.css';
-// import  scores  from './modules/constructor.js';
+import addResult from './modules/card';
+// // import { getLists } from './modules/fetch';
 
-class UI {
-   constructor() {
-     this.results = [
-      {
-        user: 'Ikoote rasuli',
-        score: 42,
-      },
-      {
-        user: 'Peter Parker',
-        score: 35,
-      },
-      {
-        user: 'Wonder Woman',
-        score: 50,
-      },
-      {
-        user: 'Ikoote rasuli',
-        score: 42,
-      },
-      {
-        user: 'Peter Parker',
-        score: 35,
-      },
-      {
-        user: 'Wonder Woman',
-        score: 50,
-      },
-      {
-        user: 'Ikoote rasuli',
-        score: 42,
-      },
-      {
-        user: 'Peter Parker',
-        score: 35,
-      },
-      {
-        user: 'Wonder Woman',
-        score: 50,
-      },
-    ];
-  }
-  renderList(){
-    this.results.forEach((result) => this.addResult(result));
-  }
+// class UI {
+//    constructor() {
+//      this.results = data;
+//   }
+//   renderList(){
+//     this.results.forEach((result) => addResult(result));
+//   }
+// }
+// const ui = new UI();
+// ui.renderList();
 
-   addResult(result) {
-    const list = document.querySelector('.scores');
-    const listRow = document.createElement('div');
-    listRow.innerHTML = `
-      <p>${result.user}</p>
-      <p>${result.score}</p>
-    `;
-    list.appendChild(listRow);
-  }
+async function loadData() {
+
+  const requestURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/2gzeEkv7rMvQMPeB1pjG/scores/';
+  const request = new Request(requestURL);
+
+  const response = await fetch(request);
+  const {result} = await response.json();
+  // console.log(superHeroes);
+  // populateHeader(superHeroes);
+  // populateHeroes(superHeroes);
+  result.forEach((res) => addResult(res));
 }
-const ui = new UI();
-//document.addEventListener('DOMContentLoaded', ui.allResults);
-ui.renderList();
 
+loadData();
 // fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/2gzeEkv7rMvQMPeB1pjG/scores/', {
 //   method: 'POST',
 //   body: JSON.stringify({
@@ -69,7 +36,7 @@ ui.renderList();
 //   }),
 //   headers: {
 //     'Content-type': 'application/json; charset=UTF-8',
-//   },
+//   }, 
 // })
 //   .then((response) => response.json())
 //   .then((json) => console.log(json));
