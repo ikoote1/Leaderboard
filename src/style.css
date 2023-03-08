@@ -1,0 +1,70 @@
+body {
+  width: 80%;
+  margin: 5%;
+  padding: 5%;
+}
+
+.main-div {
+  position: relative;
+  left: 2%;
+  right: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.scores-part,
+.submit-part {
+  padding: 10px;
+  width: 40%;
+}
+
+.score-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.refresh {
+  width: 20%;
+  height: 40px;
+  margin-top: 20px;
+}
+
+.submit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.name,
+.your-score,
+.submit {
+  height: 30px;
+}
+
+.submit {
+  width: 20%;
+  position: relative;
+  left: 80%;
+}
+
+.scores {
+  width: 100%;
+  border: solid;
+  height: 300px;
+  overflow: auto;
+}
+
+.scores::-webkit-scrollbar {
+  width: 0;
+}
+
+.scores > div {
+  border: 1px solid;
+  position: relative;
+  padding-left: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 10%;
+}
