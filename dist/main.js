@@ -116,7 +116,27 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n// import  scores  from './modules/constructor.js';\n\nclass UI {\n   constructor() {\n     this.results = [\n      {\n        user: 'Ikoote rasuli',\n        score: 42,\n      },\n      {\n        user: 'Peter Parker',\n        score: 35,\n      },\n      {\n        user: 'Wonder Woman',\n        score: 50,\n      },\n      {\n        user: 'Ikoote rasuli',\n        score: 42,\n      },\n      {\n        user: 'Peter Parker',\n        score: 35,\n      },\n      {\n        user: 'Wonder Woman',\n        score: 50,\n      },\n      {\n        user: 'Ikoote rasuli',\n        score: 42,\n      },\n      {\n        user: 'Peter Parker',\n        score: 35,\n      },\n      {\n        user: 'Wonder Woman',\n        score: 50,\n      },\n    ];\n  }\n  renderList(){\n    this.results.forEach((result) => this.addResult(result));\n  }\n\n   addResult(result) {\n    const list = document.querySelector('.scores');\n    const listRow = document.createElement('div');\n    listRow.innerHTML = `\n      <p>${result.user}</p>\n      <p>${result.score}</p>\n    `;\n    list.appendChild(listRow);\n  }\n}\nconst ui = new UI();\n//document.addEventListener('DOMContentLoaded', ui.allResults);\nui.renderList();\n\n\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_fetch_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/fetch.js */ \"./src/modules/fetch.js\");\n\n\n// import addResult from './modules/card';\n\nconst refresh = document.querySelector('.refresh');\nconst form = document.querySelector('.submit-form');\nconst list = document.querySelector('.scores');\n\n// fetching data\nrefresh.addEventListener('click', () => {\n  list.innerHTML = '';\n  (0,_modules_fetch_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n});\n\n// Adding data\n\nfunction addData(event) {\n  event.preventDefault();\n\n  const formData = new FormData(form);\n  const data = Object.fromEntries(formData);\n  const jsonData = JSON.stringify(data);\n\n  fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/2gzeEkv7rMvQMPeB1pjG/scores/', {\n    method: 'POST',\n    body: jsonData,\n    headers: {\n      'Content-type': 'application/json; charset=UTF-8',\n    },\n  })\n    .then((response) => response.json())\n    .then((json) => console.log(json));\n}\n\nform.addEventListener('submit', addData);\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/card.js":
+/*!*****************************!*\
+  !*** ./src/modules/card.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ addResult)\n/* harmony export */ });\nfunction addResult(res) {\n  const list = document.querySelector('.scores');\n  const listRow = document.createElement('div');\n  listRow.innerHTML = `\n    <p>${res.user}</p>\n    <p>${res.score}</p>\n  `;\n  list.appendChild(listRow);\n}\n\n\n//# sourceURL=webpack://leaderboard/./src/modules/card.js?");
+
+/***/ }),
+
+/***/ "./src/modules/fetch.js":
+/*!******************************!*\
+  !*** ./src/modules/fetch.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _card_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./card.js */ \"./src/modules/card.js\");\n\n\nasync function loadData() {\n  const requestURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/2gzeEkv7rMvQMPeB1pjG/scores/';\n  const request = new Request(requestURL);\n\n  const response = await fetch(request);\n  const { result } = await response.json();\n\n  result.forEach((res) => (0,_card_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(res));\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (loadData);\n\n//# sourceURL=webpack://leaderboard/./src/modules/fetch.js?");
 
 /***/ })
 

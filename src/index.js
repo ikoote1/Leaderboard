@@ -1,79 +1,35 @@
 import './style.css';
-// import  scores  from './modules/constructor.js';
+import loadData from './modules/fetch.js';
+// import addResult from './modules/card';
 
-class UI {
-   constructor() {
-     this.results = [
-      {
-        user: 'Ikoote rasuli',
-        score: 42,
-      },
-      {
-        user: 'Peter Parker',
-        score: 35,
-      },
-      {
-        user: 'Wonder Woman',
-        score: 50,
-      },
-      {
-        user: 'Ikoote rasuli',
-        score: 42,
-      },
-      {
-        user: 'Peter Parker',
-        score: 35,
-      },
-      {
-        user: 'Wonder Woman',
-        score: 50,
-      },
-      {
-        user: 'Ikoote rasuli',
-        score: 42,
-      },
-      {
-        user: 'Peter Parker',
-        score: 35,
-      },
-      {
-        user: 'Wonder Woman',
-        score: 50,
-      },
-    ];
-  }
-  renderList(){
-    this.results.forEach((result) => this.addResult(result));
-  }
+const refresh = document.querySelector('.refresh');
+const form = document.querySelector('.submit-form');
+const list = document.querySelector('.scores');
 
-   addResult(result) {
-    const list = document.querySelector('.scores');
-    const listRow = document.createElement('div');
-    listRow.innerHTML = `
-      <p>${result.user}</p>
-      <p>${result.score}</p>
-    `;
-    list.appendChild(listRow);
-  }
+// fetching data
+refresh.addEventListener('click', () => {
+  list.innerHTML = '';
+  loadData();
+});
+
+// Adding data
+
+function addData(event) {
+  event.preventDefault();
+
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData);
+  const jsonData = JSON.stringify(data);
+
+  fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/2gzeEkv7rMvQMPeB1pjG/scores/', {
+    method: 'POST',
+    body: jsonData,
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  })
+    .then((response) => response.json())
+    .then((json) => console.log(json));
 }
-const ui = new UI();
-//document.addEventListener('DOMContentLoaded', ui.allResults);
-ui.renderList();
 
-// fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/2gzeEkv7rMvQMPeB1pjG/scores/', {
-//   method: 'POST',
-//   body: JSON.stringify({
-//     user: 'ikoote-game',
-//     score:70,
-   
-//   }),
-//   headers: {
-//     'Content-type': 'application/json; charset=UTF-8',
-//   },
-// })
-//   .then((response) => response.json())
-//   .then((json) => console.log(json));
-
-//   {
-//     "result": "Game with ID: 2gzeEkv7rMvQMPeB1pjG added."
-// }
+form.addEventListener('submit', addData);
