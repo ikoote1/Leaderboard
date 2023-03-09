@@ -33,8 +33,7 @@ function addData(event) {
 }
 
 form.addEventListener('submit', addData);
-form.addEventListener('submit',()=>{
-  document.querySelector('.name').value = "";
-  document.querySelector('.your-score').value = "";
+form.addEventListener('submit', () => {
+  document.querySelector('.name').value = '';
+  document.querySelector('.your-score').value = '';
 });
-
