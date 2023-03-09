@@ -13,31 +13,36 @@ body {
   flex-direction: row;
   justify-content: space-between;
 }
-button{
+
+button {
   color: white;
   background-color: orange;
   border-radius: 5px;
   border-color: white;
   font-weight: 600;
 }
-input{
+
+input {
   border-radius: 10px;
   border-color: orange;
   border: solid orange;
   height: 40px;
   font-style: italic;
 }
+
 .scores-part,
 .submit-part {
   padding: 10px;
   width: 40%;
-    background-color: rgb(233, 183, 122);
+  background-color: rgb(233, 183, 122);
 }
-h1{
+
+h1 {
   font-size: 40px;
   font-weight: 800;
 }
-h2{
+
+h2 {
   font-size: 30px;
   font-weight: 800;
   font-style: italic;
@@ -54,11 +59,11 @@ h2{
   height: 40px;
   margin-top: 20px;
 }
-.reset{
-    width: 20%;
-    height: 40px;
-    margin-top: 20px;
-  
+
+.reset {
+  width: 20%;
+  height: 40px;
+  margin-top: 20px;
 }
 
 .submit-form {
@@ -66,7 +71,6 @@ h2{
   flex-direction: column;
   gap: 20px;
 }
-
 
 .submit {
   width: 20%;
@@ -96,6 +100,7 @@ h2{
   font-size: 20px;
   font-weight: 500;
   border-radius: 6px;
+
   /* height: 40px; */
   background: rgb(250, 250, 252);
 }
