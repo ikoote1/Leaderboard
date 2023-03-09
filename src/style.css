@@ -30,6 +30,12 @@ body {
   height: 40px;
   margin-top: 20px;
 }
+.reset{
+    width: 20%;
+    height: 40px;
+    margin-top: 20px;
+  
+}
 
 .submit-form {
   display: flex;

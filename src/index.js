@@ -37,3 +37,16 @@ form.addEventListener('submit',()=>{
   document.querySelector('.name').value = "";
   document.querySelector('.your-score').value = "";
 });
+
+//delete
+const reset = document.querySelector('.reset');
+reset.addEventListener('click',()=>{
+  fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/2gzeEkv7rMvQMPeB1pjG', {
+    method: 'DELETE',
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  })
+    .then((response) => response.json())
+    .then((json) => console.log(json));
+});
