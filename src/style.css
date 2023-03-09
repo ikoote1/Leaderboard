@@ -2,6 +2,7 @@ body {
   width: 80%;
   margin: 5%;
   padding: 5%;
+  background-color: bisque;
 }
 
 .main-div {
@@ -12,11 +13,33 @@ body {
   flex-direction: row;
   justify-content: space-between;
 }
-
+button{
+  color: white;
+  background-color: orange;
+  border-radius: 5px;
+  border-color: white;
+  font-weight: 600;
+}
+input{
+  border-radius: 10px;
+  border-color: orange;
+  border: solid orange;
+  height: 40px;
+  font-style: italic;
+}
 .scores-part,
 .submit-part {
   padding: 10px;
   width: 40%;
+}
+h1{
+  font-size: 40px;
+  font-weight: 800;
+}
+h2{
+  font-size: 30px;
+  font-weight: 800;
+  font-style: italic;
 }
 
 .score-title {
@@ -43,21 +66,17 @@ body {
   gap: 20px;
 }
 
-.name,
-.your-score,
-.submit {
-  height: 30px;
-}
 
 .submit {
   width: 20%;
+  height: 40px;
   position: relative;
   left: 80%;
 }
 
 .scores {
   width: 100%;
-  border: solid;
+  border: solid orange;
   height: 300px;
   overflow: auto;
 }
@@ -67,10 +86,15 @@ body {
 }
 
 .scores > div {
-  border: 1px solid;
+  border: 1px solid orange;
   position: relative;
-  padding-left: 5px;
+  padding-left: 10px;
   display: flex;
   flex-direction: row;
   gap: 10%;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 6px;
+  /* height: 40px; */
+  background-color: white;
 }
