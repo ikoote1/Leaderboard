@@ -1,6 +1,5 @@
 import './style.css';
 import loadData from './modules/fetch.js';
-// import addResult from './modules/card';
 
 const refresh = document.querySelector('.refresh');
 const form = document.querySelector('.submit-form');
@@ -33,3 +32,7 @@ function addData(event) {
 }
 
 form.addEventListener('submit', addData);
+form.addEventListener('submit', () => {
+  document.querySelector('.name').value = '';
+  document.querySelector('.your-score').value = '';
+});
