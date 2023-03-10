@@ -1,6 +1,5 @@
 import './style.css';
 import loadData from './modules/fetch.js';
-// import addResult from './modules/card';
 
 const refresh = document.querySelector('.refresh');
 const form = document.querySelector('.submit-form');
